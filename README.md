@@ -4,7 +4,7 @@ Password Generator
 ## Description 
 This challenge was completed to create a password generator. It was created to randomly generate a password that meets certain criteria and provides a strong password that provides greater security. 
 
-##Link to application
+## Link to application
 https://gioq89.github.io/03-JavaScript-Password-Generator/
 
 ## Screenshot
