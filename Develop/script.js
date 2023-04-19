@@ -26,17 +26,33 @@ function generatePassword() {
   var includeSpecialCharacters = confirm("Do you want special characters included?");
 
   // alert in case user doesn't select any character types "my input should be validated and at least one character type should be selected"
-  if(!lowercase && !uppercase && !numberic && !specialCharacters) {
+  if (!includeLowercase && !includeUppercase && !includeNumberic && !includeSpecialCharacters) {
     alert("Invalid password. Must include at least one character type.");
     return;
   }
 
   // defined types of characters
   var lowercase = "abcdefghijklmnopqrstuvwxyz";
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numberic = "0123456789";
   var specialCharacters = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
+  var userChoices = "";
+    if (includeLowercase) {
+      userChoices += lowercase;
+    }
+    if (includeUppercase) {
+      userChoices += uppercase;
+    }
+    if (includeNumberic) {
+      userChoices += numberic;
+    }
+    if (includeSpecialCharacters) {
+      userChoices += specialCharacters;
+    }
+
+    Math.floor(Math.random() * userChoices.length);
+    
 }
 
 // Add event listener to generate button
