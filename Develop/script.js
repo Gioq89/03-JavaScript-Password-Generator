@@ -37,6 +37,7 @@ function generatePassword() {
   var numberic = "0123456789";
   var specialCharacters = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
 
+  // created variable to store choices
   var userChoices = "";
     if (includeLowercase) {
       userChoices += lowercase;
@@ -51,9 +52,16 @@ function generatePassword() {
       userChoices += specialCharacters;
     }
 
-    Math.floor(Math.random() * userChoices.length);
+    // created variable to randomize choices equal to password length
+    var randomPassword = "";
+    for(var i=0; i < passwordLength; i++) {
+      var randomIndex = Math.floor(Math.random() * userChoices.length);
+      randomPassword += userChoices[randomIndex];
+    }
     
-}
+    return randomPassword;
+
+  }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
